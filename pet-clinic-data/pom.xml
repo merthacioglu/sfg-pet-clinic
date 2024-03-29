@@ -6,15 +6,17 @@
     <parent>
         <groupId>com.mhacioglu</groupId>
         <artifactId>sfg-pet-clinic</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>pet-clinic-data</artifactId>
+
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
     </properties>
     <dependencies>
         <dependency>
@@ -52,9 +54,7 @@
                         <goals>
                             <goal>repackage</goal>
                         </goals>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
+
                     </execution>
                 </executions>
 
