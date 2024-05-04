@@ -1,9 +1,7 @@
 package com.mhacioglu.sfgpetclinic.services.map;
 
-import com.mhacioglu.sfgpetclinic.model.Pet;
 import com.mhacioglu.sfgpetclinic.model.Speciality;
 import com.mhacioglu.sfgpetclinic.model.Vet;
-import com.mhacioglu.sfgpetclinic.services.CrudService;
 import com.mhacioglu.sfgpetclinic.services.SpecialityService;
 import com.mhacioglu.sfgpetclinic.services.VetService;
 import org.springframework.stereotype.Service;
@@ -11,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class VetServiceMap  extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
     private SpecialityService specialityService;
     @Override
     public Set<Vet> findAll() {
@@ -28,7 +26,7 @@ public class VetServiceMap  extends AbstractMapService<Vet, Long> implements Vet
         super.delete(object);
     }
 
-    public VetServiceMap(SpecialityService specialityService) {
+    public VetMapService(SpecialityService specialityService) {
         this.specialityService = specialityService;
     }
 
