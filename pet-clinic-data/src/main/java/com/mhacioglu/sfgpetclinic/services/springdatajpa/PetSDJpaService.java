@@ -1,4 +1,4 @@
-package com.mhacioglu.sfgpetclinic.springdatajpa;
+package com.mhacioglu.sfgpetclinic.services.springdatajpa;
 
 import com.mhacioglu.sfgpetclinic.model.Pet;
 import com.mhacioglu.sfgpetclinic.repositories.PetRepository;
