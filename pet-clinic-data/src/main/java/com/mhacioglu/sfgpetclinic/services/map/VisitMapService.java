@@ -3,12 +3,10 @@ package com.mhacioglu.sfgpetclinic.services.map;
 import com.mhacioglu.sfgpetclinic.model.Pet;
 import com.mhacioglu.sfgpetclinic.model.Visit;
 import com.mhacioglu.sfgpetclinic.services.VisitService;
-import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Set;
 
-@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
     @Override
     public Set<Visit> findAll() {
