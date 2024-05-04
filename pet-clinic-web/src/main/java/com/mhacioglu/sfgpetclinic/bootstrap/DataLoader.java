@@ -1,7 +1,10 @@
 package com.mhacioglu.sfgpetclinic.bootstrap;
 
 import com.mhacioglu.sfgpetclinic.model.*;
-import com.mhacioglu.sfgpetclinic.services.*;
+import com.mhacioglu.sfgpetclinic.services.OwnerService;
+import com.mhacioglu.sfgpetclinic.services.PetTypeService;
+import com.mhacioglu.sfgpetclinic.services.SpecialityService;
+import com.mhacioglu.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,17 +18,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
-    private final VisitService visitService;
 
 
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
 
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
-        this.visitService = visitService;
     }
     @Override
     public void run(String... args) throws Exception {
@@ -85,12 +86,6 @@ public class DataLoader implements CommandLineRunner {
         bryansDog.setPetType(savedDogPetType);
         bryansDog.setOwner(owner2);
         ownerService.save(owner2);
-
-        Visit catVisit = new Visit();
-        catVisit.setPet(mertsPet);
-        catVisit.setDate(LocalDate.of(2022, 7, 15));
-        catVisit.setDescription("Periodic checkup for Mert's ragamuffin");
-        visitService.save(catVisit);
 
         System.out.println("Loaded owners...");
 
